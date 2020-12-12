@@ -17,4 +17,6 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Transaction < ApplicationRecord
+	belongs_to :user
+	belongs_to :orderstatus, optional: true
 end

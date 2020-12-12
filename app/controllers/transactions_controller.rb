@@ -4,7 +4,11 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.all
+    if current_user.admin?
+      @trans = Transaction.all.order(created_at: :desc)
+    else
+      @trans = current_user.transactions
+    end
   end
 
   # GET /transactions/1
@@ -60,6 +64,7 @@ class TransactionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
