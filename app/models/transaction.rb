@@ -25,4 +25,5 @@
 class Transaction < ApplicationRecord
 	belongs_to :user
 	belongs_to :orderstatus, optional: true
+	belongs_to :postal_fee, optional: true
 end
