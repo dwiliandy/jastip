@@ -1,0 +1,52 @@
+/* Login & Register Page */
+.userform-box {
+  max-width: 945px;
+  background-color: #fff;
+  position: relative; }
+  @media (min-width: 768px) {
+    .userform-box {
+      margin: 100px auto; } }
+  .userform-box .alert-blue-dmw {
+    width: 100%;
+    position: absolute;
+    top: -80px; }
+  @media (min-width: 768px) {
+    .userform-box .row {
+      display: -moz-box;
+      display: -webkit-flexbox;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: flex;
+      align-items: center; } }
+  .userform-box .dmw-logo {
+    background-color: #42b0e5;
+    font-size: 18px;
+    color: #fff;
+    padding: 30px; }
+    @media (min-width: 768px) {
+      .userform-box .dmw-logo {
+        padding: 190px 50px;
+      min-height: 550px;} }
+    @media (max-width: 767px) {
+      .userform-box .dmw-logo {
+        margin-bottom: 30px; } }
+    .userform-box .dmw-logo img {
+      margin-bottom: 30px; }
+  @media (min-width: 768px) {
+    .userform-box .login-form, .userform-box .signup-form {
+      padding: 50px 90px; } }
+  .userform-box .login-form .form-control, .userform-box .signup-form .form-control {
+    font-size: 12px;
+    text-align: center;
+    padding-left: 15px; }
+  .userform-box .login-form select.form-control, .userform-box .signup-form select.form-control {
+    text-align-last: center; }
+  .userform-box .login-form h3, .userform-box .signup-form h3 {
+    margin-bottom: 30px;
+    font-size: 26px; }
+  .userform-box .login-form .btn-dmw, .userform-box .signup-form .btn-dmw {
+    margin: 15px auto 30px auto;
+    text-transform: uppercase; }
+  .userform-box .login-form p, .userform-box .signup-form p {
+    line-height: 1; }
