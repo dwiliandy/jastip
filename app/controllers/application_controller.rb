@@ -14,9 +14,9 @@ protect_from_forgery with: :exception
     # check for the class of the object to determine what type it is
     case resource.role
     when "admin"
-      dashboard_index_path
+      transactions_path
     when "customer"
-      homepage_index_path
+      products_path
     else
       root_path
     end
