@@ -1,4 +1,12 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: transactions
+#
+#  id          :bigint           not null, primary key
+#  total_price :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 
 one:
   total_price: 1

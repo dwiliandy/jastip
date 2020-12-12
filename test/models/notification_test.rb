@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: notifications
+#
+#  id         :bigint           not null, primary key
+#  message    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 require 'test_helper'
 
 class NotificationTest < ActiveSupport::TestCase
