@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_212607) do
+ActiveRecord::Schema.define(version: 2020_12_12_223246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 2020_12_12_212607) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.string "image"
+    t.integer "stock"
+    t.integer "status"
+    t.bigint "region_id", null: false
+    t.index ["region_id"], name: "index_products_on_region_id"
+  end
+
   create_table "regions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -37,7 +47,9 @@ ActiveRecord::Schema.define(version: 2020_12_12_212607) do
     t.integer "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
+    t.bigint "order_status_id"
+    t.index ["order_status_id"], name: "index_transactions_on_order_status_id"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
@@ -57,5 +69,7 @@ ActiveRecord::Schema.define(version: 2020_12_12_212607) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "regions"
+  add_foreign_key "transactions", "order_statuses"
   add_foreign_key "transactions", "users"
 end
