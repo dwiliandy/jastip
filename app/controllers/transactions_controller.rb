@@ -5,9 +5,9 @@ class TransactionsController < ApplicationController
   # GET /transactions.json
   def index
     if current_user.admin?
-      @trans = Transaction.all.order(created_at: :desc)
+      @transactions = Transaction.all.order(created_at: :desc)
     else
-      @trans = current_user.transactions
+      @transactions = current_user.transactions
     end
   end
 
