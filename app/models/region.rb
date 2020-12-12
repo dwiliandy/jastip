@@ -28,6 +28,7 @@ class Region < ApplicationRecord
 					:id => y,
 					:name => x
 				}
+			end
 		end
 	end
 end
