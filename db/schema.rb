@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_224143) do
+ActiveRecord::Schema.define(version: 2020_12_12_231746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "carts", force: :cascade do |t|
     t.bigint "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_carts_on_product_id"
   end
 
@@ -28,6 +30,13 @@ ActiveRecord::Schema.define(version: 2020_12_12_224143) do
 
   create_table "order_statuses", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "postal_fees", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -54,7 +63,9 @@ ActiveRecord::Schema.define(version: 2020_12_12_224143) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.bigint "order_status_id"
+    t.bigint "postal_fee_id"
     t.index ["order_status_id"], name: "index_transactions_on_order_status_id"
+    t.index ["postal_fee_id"], name: "index_transactions_on_postal_fee_id"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
@@ -77,5 +88,6 @@ ActiveRecord::Schema.define(version: 2020_12_12_224143) do
   add_foreign_key "carts", "products"
   add_foreign_key "products", "regions"
   add_foreign_key "transactions", "order_statuses"
+  add_foreign_key "transactions", "postal_fees"
   add_foreign_key "transactions", "users"
 end
