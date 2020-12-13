@@ -7,7 +7,7 @@ tclass TransactionsController < ApplicationController
     if current_user.admin?
       @transactions = Transaction.all.order(created_at: :desc)
     else
-      @transactions = current_user.transactions
+        @transactions = current_user.transactions
     end
   end
 
