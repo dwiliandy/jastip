@@ -16,7 +16,7 @@ protect_from_forgery with: :exception
     when "admin"
       transactions_path
     when "customer"
-      products_path
+      root_path
     else
       root_path
     end
