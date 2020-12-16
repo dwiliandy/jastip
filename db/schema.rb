@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_231746) do
+ActiveRecord::Schema.define(version: 2020_12_16_090637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_12_12_231746) do
     t.integer "stock"
     t.integer "status"
     t.bigint "region_id", null: false
+    t.text "description"
     t.index ["region_id"], name: "index_products_on_region_id"
   end
 

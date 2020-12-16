@@ -2,13 +2,14 @@
 #
 # Table name: products
 #
-#  id        :bigint           not null, primary key
-#  image     :string
-#  name      :string
-#  price     :float
-#  status    :integer
-#  stock     :integer
-#  region_id :bigint           not null
+#  id          :bigint           not null, primary key
+#  description :text
+#  image       :string
+#  name        :string
+#  price       :float
+#  status      :integer
+#  stock       :integer
+#  region_id   :bigint           not null
 #
 # Indexes
 #
