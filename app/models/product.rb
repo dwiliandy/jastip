@@ -21,4 +21,6 @@
 #
 class Product < ApplicationRecord
 	belongs_to :region
+
+	enum status: {available: 0, run_out: 1}
 end

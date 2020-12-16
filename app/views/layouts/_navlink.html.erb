@@ -1,0 +1,24 @@
+<nav class="navbar navbar-bluesky border border-dark">
+	<!-- <i class="fas fa-home"></i> -->
+	<%if current_user.nil?%>
+	<a class="btn btn-dark" href="root_path">Logo</button>
+		  <a class="navbar-brand" href="#">User</a>
+		  <a class="navbar-brand" href="#">Product</a>
+		  <a class="navbar-brand" href="#">Transaction</a>
+		  <a class="navbar-brand" href="#">Transaction</a>
+	<%else%>
+		<%if current_user.admin?%>
+		  <a class="btn btn-dark" href="root_path">Logo</button>
+		  <a class="navbar-brand" href="#">User</a>
+		  <a class="navbar-brand" href="#">Product</a>
+		  <a class="navbar-brand" href="#">Transaction</a>
+		  <a class="navbar-brand" href="#">Transaction</a>
+		  <%else%>
+		  <a class="btn btn-dark" href="#">Logo</button>
+		  <a class="navbar-brand" href="#">User</a>
+		  <a class="navbar-brand" href="#">Product</a>
+		  <a class="navbar-brand" href="#">Transaction</a>
+		  <a class="navbar-brand" href="#">Transaction</a>
+		 <%end%>
+  <%end%>
+</nav>
