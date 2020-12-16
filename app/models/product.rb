@@ -20,7 +20,7 @@
 #  fk_rails_...  (region_id => regions.id)
 #
 class Product < ApplicationRecord
+	mount_uploader :image, ImageUploader
 	belongs_to :region
-
 	enum status: {available: 0, run_out: 1}
 end

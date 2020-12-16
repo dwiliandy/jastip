@@ -60,3 +60,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'bootstrap', '~> 5.0.0.alpha3'
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
+# gem 'mini_racer', platforms: :ruby
+# gem 'therubyracer', platforms: :ruby

@@ -17,6 +17,12 @@
   </div>
 
   <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+
+  <div class="field">
     <%= form.label :price %>
     <%= form.number_field :price %>
   </div>
@@ -29,6 +35,11 @@
   <div class="field">
     <%= form.label :region %>
     <%= form.collection_select(:region_id, Region.all, :id, :name,{ selected: form.object.region_id, include_blank: "Select"}, { class: "form-control", required: true }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
   </div>
 
   <div class="actions">
