@@ -1,3 +1,5 @@
+<div class="table">
+  <div class="dataTable">
   <%= form_for @product do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +12,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -43,6 +44,8 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Save"%>
+    <%= form.submit "Save", class: "btn btn-expand-sm btn-sm btn-info"%>
   </div>
 <% end %>
+</div>
+</div>

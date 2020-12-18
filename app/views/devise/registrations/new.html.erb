@@ -1,45 +1,53 @@
 <%= render "layouts/navlink" %>
-<div class="login">
-  <h2>Sign up</h2>
+<div class="login d-flex justify-content-center">
+  <!-- Material form login -->
+  <div class="card">
+    <h5 class="card-header info-color white-text text-center py-3">
+      <strong>Sign Up</strong>
+    </h5>
+      <!--Card content-->
+      <div class="card-body px-lg-5 pt-0">
+        <!-- Form -->
+        <form class="text-center" style="color: #757575;">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="md-form">
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name" %>
+          </div>
 
-    <div class="field">
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name" %>
+          <div class="md-form">
+            <%= f.number_field :phone_number, autofocus: true, autocomplete: "phone number", placeholder: "Phone Number" %>
+          </div>
+
+          <div class="md-form">
+            <%= f.text_field :address, autofocus: true, autocomplete: "address", placeholder: "Address" %>
+          </div>
+
+          <div class="md-form">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+          </div>
+
+          <div class="md-form">
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password' %>
+            <% if @minimum_password_length %>
+              (<%= @minimum_password_length %> characters minimum) 
+            <% end %>
+          </div>
+
+          
+          <div class="md-form">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation" %>
+          </div>
+
+          <button type="submit" class="btn btn-info btn-block btn-large">Sign Up</button>
+
+          <!-- <div class="actions">
+            <%= f.submit "Sign up" %>
+          </div> -->
+        <% end %>
+      <%= render "devise/shared/links" %>
+    </form>
     </div>
-
-    <div class="field">
-      <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone number", placeholder: "Phone Number" %>
-    </div>
-
-    <div class="field">
-      <%= f.text_field :address, autofocus: true, autocomplete: "address", placeholder: "Address" %>
-    </div>
-
-    <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
-    </div>
-
-    <div class="field">
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %>
-      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
-    </div>
-
-    
-    <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation" %>
-    </div>
-
-    <button type="submit" class="btn btn-primary btn-block btn-large">Sign Up</button>
-
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-      
-    </div>
-
-  <% end %>
-  <%= render "devise/shared/links" %>
+  </div>
 </div>
