@@ -7,9 +7,8 @@
 		    <tr>
 		      <th>Name</th>
 		      <th>Phone Number</th>
-		      <th>Stock</th>
-		      <th>Region</th>
-		      <th><%= link_to 'Add New Product', new_product_path, class: "btn btn-green", style: "color:white"%></th>
+		      <th>Email</th>
+		      <th>Address</th>
 		    </tr>
 		  </thead>
 <p>
@@ -29,5 +28,5 @@
   <%= @user.address %>
 </p>
 </table>
+<%= link_to 'Back', users_path, class: 'btn btn-sm btn-danger' %>
 </div>	
-<%= link_to 'Back', users_path %>

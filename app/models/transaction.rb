@@ -26,4 +26,11 @@ class Transaction < ApplicationRecord
 	belongs_to :user
 	belongs_to :orderstatus, optional: true
 	belongs_to :postal_fee, optional: true
+	has_many :carts
+
+	class << self
+		def final_price
+			cart_price = carts.map do {|cart| cart.price}.sum
+			total_price = cart_price + postal_fee.price
+		end
 end

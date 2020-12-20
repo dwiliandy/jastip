@@ -22,5 +22,6 @@
 class Product < ApplicationRecord
 	mount_uploader :image, ImageUploader
 	belongs_to :region
+	has_many :carts
 	enum status: {available: 0, run_out: 1}
 end
