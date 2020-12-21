@@ -30,7 +30,9 @@
               </fieldset>
             <% end %>
 
-          <button type="submit" class="btn btn-info btn-sm btn-block" style="color:white">Log in</button>
+           <div class="actions">
+            <%= f.submit "Login", class: 'btn btn-sm btn-info' %>
+          </div>
 
           <% end %>
           <div><%= render "devise/shared/links" %></div>
